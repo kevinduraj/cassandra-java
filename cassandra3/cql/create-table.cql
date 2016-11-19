@@ -4,11 +4,11 @@
 -- ------------------------------------------------------------------------------------------------- --
 -- USE test;
 
--- DROP TABLE bigtable;
+DROP TABLE test.movie;
 CREATE TABLE test.movie 
 (
     title text, 
-    year  text, 
+    year  int, 
     description text, 
     rating text,
     PRIMARY KEY (title)

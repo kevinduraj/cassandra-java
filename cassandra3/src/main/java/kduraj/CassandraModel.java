@@ -11,6 +11,7 @@ public class CassandraModel {
     private Cluster cluster;
     private Session session;
     private int counter=0;
+
     /*-------------------------------------------------------------------------------------------------------*/
     public void connect(final String node, final int port) {
 
@@ -28,20 +29,21 @@ public class CassandraModel {
     /*-------------------------------------------------------------------------------------------------------*/
     public void insertMovie(final String title , final int year , final String description , final String rating) {
          
-        String SQL = "INSERT INTO test.movie (title, year, description, rating) VALUES ('" + title + "','" + year + "','" + description + "','" + rating + "');";
-        //session.execute( "INSERT INTO test.movies (title, year, description, rating) " + " VALUES (?, ?, ?, ?)", title, year, description, rating);
+        String SQL = "INSERT INTO test.movie (title, year, description, rating) VALUES ('" + title + "'," + year + ",'" + description + "','" + rating + "');";
+        //session.execute(SQL); 
+        session.execute( "INSERT INTO test.movie (title, year, description, rating) VALUES (?, ?, ?, ?)", title, year, description, rating);
        
         if((counter % 10) == 0) {
             System.out.println(SQL);
         }
-        session.execute(SQL); 
         counter++;
     }
+
     /*-------------------------------------------------------------------------------------------------------*/
     public void deleteMovie(final String title, final int year) {
 
         out.println(" DELETE: title=" + title + " year=" + year );
-        session.execute("DELETE FROM test.movies WHERE title = ? AND year = ?", title, year);
+        session.execute("DELETE FROM test.movie WHERE title = ? AND year = ?", title, year);
     }
 
     /*-------------------------------------------------------------------------------------------------------*/
