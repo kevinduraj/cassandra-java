@@ -2,9 +2,9 @@
 -- http://cassandra.apache.org/doc/cql/CQL.html#ConsistencyLevel
 -------------------------------------------------------------------------------------
 -- DROP KEYSPACE DROP keyspace2; 
-CREATE KEYSPACE keyspace3 WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+CREATE KEYSPACE keyspace2 WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
 -------------------------------------------------------------------------------------
-USE keyspace3;
+USE keyspace2;
 
 -- DROP TABLE bigtable;
 CREATE TABLE bigtable
@@ -17,4 +17,5 @@ CREATE TABLE bigtable
    PRIMARY KEY (key1)
 );
 
+DESCRIBE KEYSPACE keyspace2;
 -------------------------------------------------------------------------------------
