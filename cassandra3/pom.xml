@@ -5,11 +5,10 @@
   <artifactId>cassandra3</artifactId>
   <packaging>jar</packaging>
   <version>0.0.1</version>
-  <name>cassandra3</name>
+  <name>Cassandra3</name>
   <url>http://maven.apache.org</url>
 
   <dependencies>
-
     <dependency>
         <groupId>com.datastax.cassandra</groupId>
         <artifactId>cassandra-driver-core</artifactId>
@@ -22,8 +21,6 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-
-
   </dependencies>
 
   <!--  Build Executable JAR -->
